@@ -1,0 +1,175 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Laravel 11",
+        "description": "Dokumentasi API Laravel 11 menggunakan Swagger di Web Aplikasi BKI",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "/"
+        }
+    ],
+    "paths": {
+        "/api/checkhealth": {
+            "get": {
+                "tags": [
+                    "Check Health"
+                ],
+                "summary": "Menampilkan hasil dari pengecekan koneksi sistem ke database",
+                "operationId": "d1d6bed197a5ba01d1ba20239d702cfb",
+                "responses": {
+                    "200": {
+                        "description": "Sukses",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/listposts": {
+            "get": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Menampilkanseluruh data dari tabel Posts",
+                "operationId": "126f29e72af6dd1b965c80472dd3a458",
+                "responses": {
+                    "202": {
+                        "description": "Sukses",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/findposts/{id}": {
+            "get": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Menampilkan data dari tabel Posts berdasarkan ID Data (Primary Key)",
+                "operationId": "c1cba42a1be785dee35f89452b214f9c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID Posts",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Sukses",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/storeposts": {
+            "post": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Menyimpan input data Posts",
+                "operationId": "f8ab74a5069bcbd5433612a04443e84a",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "title": {
+                                        "description": "Judul artikel/posts",
+                                        "type": "string",
+                                        "example": "Judul Artikel"
+                                    },
+                                    "authors": {
+                                        "description": "Nama penulis artikel/posts",
+                                        "type": "string",
+                                        "example": "John Dee"
+                                    },
+                                    "publishdate": {
+                                        "description": "Tanggal publish artikel/posts",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-02-10"
+                                    },
+                                    "publishactive": {
+                                        "description": "Status publish artikel/posts",
+                                        "type": "number",
+                                        "example": "1"
+                                    },
+                                    "content": {
+                                        "description": "Isi konten artikel/posts",
+                                        "type": "text",
+                                        "example": "Bla...Bla...Bla"
+                                    },
+                                    "idcatgegory": {
+                                        "description": "ID Kategori artikel/posts",
+                                        "type": "number",
+                                        "example": "2"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "202": {
+                        "description": "Sukses",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Check Health",
+            "description": "Check Health"
+        },
+        {
+            "name": "Posts",
+            "description": "Posts"
+        }
+    ]
+}
