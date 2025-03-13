@@ -4,11 +4,11 @@
 <table border="1" style="border-collapse: collapse;" cellpadding="5">
     <thead>
     <tr>
-        <th>ID</th>
-        <th>TITLE</th>
-        <th>AUTHOR</th>
-        <th>PUBLISH DATE</th>
-        <th>ACTIVE</th>
+        <th>NO</th>
+        <th>JUDUL ARTIKEL</th>
+        <th>PENULIS ARTIKEL</th>
+        <th>TANGGAL TAYANG</th>
+        <th>STATUS</th>
     </tr>
     </thead>    
     @foreach ($data['data'] as $key=>$item)
